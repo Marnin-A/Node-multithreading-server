@@ -1,0 +1,2 @@
+# This is to not push bulky dependencies to the remote git repository
+node_modules
