@@ -10,7 +10,7 @@ app.set("view engine", "ejs");
 // Server
 app.get("/", (req, res) => {
   //Get method
-  res.render("index");
+  res.render("index", { title: "Login page" });
 });
 
 // app.post();
