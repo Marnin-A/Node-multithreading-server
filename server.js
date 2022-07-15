@@ -1,29 +1,19 @@
 // Handles requests and response
-const http = require("http");
+const express = require("express");
 // File handling
-const fs = require("fs");
+const app = express();
 // Port value
-const port = 5500;
+const port = process.env.PORT || 4000;
+//Enables server HTML file rendering
+app.set("view engine", "ejs");
 
 // Server
-const server = http.createServer(function (req, res) {
-  res.writeHead(200, { "Content-type": "text/html" });
+app.get("/", (req, res) => {
+  //Get method
+  res.render("index");
+});
 
-  fs.readFile("index.html", function (error, data) {
-    if (error) {
-      res.writeHead(404);
-      res.write("Error: File not found");
-    } else {
-      res.write(data);
-    }
-    res.end();
-  });
-});
-// Error handling
-server.listen(port, function (error) {
-  if (error) {
-    console.log("Something went wrong", error);
-  } else {
-    console.log("Server listening on port" + port);
-  }
-});
+// app.post();
+app.listen(port, () =>
+  console.log("Listening to the server on http://localhost:4000")
+);
