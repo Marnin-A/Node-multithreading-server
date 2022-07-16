@@ -1,11 +1,15 @@
-// Handles requests and response
+// Import Modules
 const express = require("express");
-
-// File handling
 const app = express();
+const path = require("path");
+
 
 // Port value
 const port = process.env.PORT || 4000;
+
+//Load static assets
+app.use("/static", express.static(path.join(__dirname, 'public')))
+app.use("/assets", express.static(path.join(__dirname, "assets/images")))
 
 //Enables server HTML file rendering
 app.set("view engine", "ejs");

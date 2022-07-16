@@ -1,0 +1,21 @@
+body{
+    background-image: url("../../images/pexels-daniel-absi-952670.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.center-div{
+    padding-top: 10%;
+    
+}
+
+.container{
+    border: solid black;
+}
+.btn.btn-success{
+    padding: .4em 2em;
+    margin-top: 1em;
+}
+
+form{
+    padding: 0 3em;
+}
