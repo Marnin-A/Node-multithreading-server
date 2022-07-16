@@ -1,8 +1,9 @@
 body{
-    background-image: url("../../images/pexels-daniel-absi-952670.jpg");
+    background-image: url("pexels-daniel-absi-952670.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 .center-div{
     padding-top: 10%;
     
