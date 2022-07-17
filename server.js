@@ -5,6 +5,7 @@ const app = express();
 const path = require("path");
 const session = require("express-session")
 const {v4: uuidv4} =require("uuid")
+const router = require("./router")
 
 
 // Port value
@@ -28,9 +29,11 @@ app.use("/assets", express.static(path.join(__dirname, "assets/images")))
 //Enables server HTML file rendering
 app.set("view engine", "ejs");
 
-// Server
+//Routes
+
+app.use("/route", router)
+//Home route
 app.get("/", (req, res) => {
-//Get method
   res.render("index", { title: "Group B" });
 });
 
